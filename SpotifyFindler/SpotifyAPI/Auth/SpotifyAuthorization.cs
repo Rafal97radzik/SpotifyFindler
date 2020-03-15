@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SpotifyAPI.Auth
 {
-    public class SpotifyAuthorization
+    internal class SpotifyAuthorization
     {
         private const string uri = "https://accounts.spotify.com/api/token";
         private const string postData = "grant_type=client_credentials";
@@ -19,7 +19,7 @@ namespace SpotifyAPI.Auth
         private Token token;
         private DateTime tokenExpiresIn;
 
-        public SpotifyAuthorization(string clientId, string clientSecret)
+        internal SpotifyAuthorization(string clientId, string clientSecret)
         {
             this.headerValue = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(clientId + ":" + clientSecret));
             this.webClient = new SpotifyWebClient();
@@ -27,7 +27,7 @@ namespace SpotifyAPI.Auth
             this.tokenExpiresIn = DateTime.Now;
         }
 
-        public Token GetToken()
+        internal Token GetToken()
         {
             if (DateTime.Now > tokenExpiresIn)
             {
@@ -39,7 +39,7 @@ namespace SpotifyAPI.Auth
             return token;
         }
 
-        public async Task<Token> GetTokenAsync()
+        internal async Task<Token> GetTokenAsync()
         {
             if (DateTime.Now > tokenExpiresIn)
             {

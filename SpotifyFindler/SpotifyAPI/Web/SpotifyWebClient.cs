@@ -8,45 +8,45 @@ using System.Threading.Tasks;
 
 namespace SpotifyAPI.Web
 {
-    class SpotifyWebClient
+    internal class SpotifyWebClient
     {
-        public async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
+        internal async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
         {
             return await GetDataFromRequestAsync(requestUri, headerType, headerValue, postData);
         }
 
-        public async Task<string> GetDataFromRequestAsync(string requestUri, string postData)
+        internal async Task<string> GetDataFromRequestAsync(string requestUri, string postData)
         {
             return await GetDataFromRequestAsync(requestUri, null, null, postData);
         }
 
-        public async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader headerType, string headerValue)
+        internal async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader headerType, string headerValue)
         {
             return await GetDataFromRequestAsync(requestUri, headerType, headerValue, null);
         }
 
-        public async Task<string> GetDataFromRequestAsync(string requestUri)
+        internal async Task<string> GetDataFromRequestAsync(string requestUri)
         {
             return await GetDataFromRequestAsync(requestUri, null, null, null);
         }
 
 
-        public string GetDataFromRequest(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
+        internal string GetDataFromRequest(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
         {
             return GetDataFromRequest(requestUri, headerType, headerValue, postData);
         }
 
-        public string GetDataFromRequest(string requestUri, string postData)
+        internal string GetDataFromRequest(string requestUri, string postData)
         {
             return GetDataFromRequest(requestUri, null, null, postData);
         }
 
-        public string GetDataFromRequest(string requestUri, HttpRequestHeader headerType, string headerValue)
+        internal string GetDataFromRequest(string requestUri, HttpRequestHeader headerType, string headerValue)
         {
             return GetDataFromRequest(requestUri, headerType, headerValue, null);
         }
 
-        public string GetDataFromRequest(string requestUri)
+        internal string GetDataFromRequest(string requestUri)
         {
             return GetDataFromRequest(requestUri, null, null, null);
         }
