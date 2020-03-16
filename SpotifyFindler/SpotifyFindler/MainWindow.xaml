@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpotifyFindler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800" MinWidth="800" MinHeight="600">
+        Title="SpotifyFindler" Height="650" Width="800" MinWidth="800" MinHeight="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46"/>
