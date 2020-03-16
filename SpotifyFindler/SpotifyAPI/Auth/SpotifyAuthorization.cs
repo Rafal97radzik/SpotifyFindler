@@ -31,8 +31,8 @@ namespace SpotifyAPI.Auth
         {
             if (DateTime.Now > tokenExpiresIn)
             {
-                string dateString = webClient.GetDataFromRequest(uri, HttpRequestHeader.Authorization, headerValue, postData);
-                token = JsonConvert.DeserializeObject<Token>(dateString);
+                string dataString = webClient.GetDataFromRequest(uri, HttpRequestHeader.Authorization, headerValue, postData);
+                token = JsonConvert.DeserializeObject<Token>(dataString);
                 tokenExpiresIn = DateTime.Now.AddSeconds(token.ExpiresIn - 30);
             }
 
@@ -43,8 +43,8 @@ namespace SpotifyAPI.Auth
         {
             if (DateTime.Now > tokenExpiresIn)
             {
-                string dateString = await webClient.GetDataFromRequestAsync(uri, HttpRequestHeader.Authorization, headerValue, postData);
-                token = JsonConvert.DeserializeObject<Token>(dateString);
+                string dataString = await webClient.GetDataFromRequestAsync(uri, HttpRequestHeader.Authorization, headerValue, postData);
+                token = JsonConvert.DeserializeObject<Token>(dataString);
                 tokenExpiresIn = DateTime.Now.AddSeconds(token.ExpiresIn - 30);
             }
 
