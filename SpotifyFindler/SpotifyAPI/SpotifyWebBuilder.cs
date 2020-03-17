@@ -17,7 +17,13 @@ namespace SpotifyAPI
             limit = Math.Min(50, limit);
             StringBuilder builder = new StringBuilder(APIBase + "/search");
             builder.Append("?q=" + queryKeywords);
-            builder.Append("&type=" + type.ToString());
+            builder.Append("&type=" + type[0].ToString());
+
+            for (int i = 1; i < type.Length; i++)
+            {
+                builder.Append("," + type[i].ToString());
+            }
+
             builder.Append("&limit=" + limit);
             builder.Append("&offset=" + offset);
 
