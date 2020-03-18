@@ -10,11 +10,6 @@ namespace SpotifyAPI.Web
 {
     internal class SpotifyWebClient
     {
-        internal async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
-        {
-            return await GetDataFromRequestAsync(requestUri, headerType, headerValue, postData);
-        }
-
         internal async Task<string> GetDataFromRequestAsync(string requestUri, string postData)
         {
             return await GetDataFromRequestAsync(requestUri, null, null, postData);
@@ -28,12 +23,6 @@ namespace SpotifyAPI.Web
         internal async Task<string> GetDataFromRequestAsync(string requestUri)
         {
             return await GetDataFromRequestAsync(requestUri, null, null, null);
-        }
-
-
-        internal string GetDataFromRequest(string requestUri, HttpRequestHeader headerType, string headerValue, string postData)
-        {
-            return GetDataFromRequest(requestUri, headerType, headerValue, postData);
         }
 
         internal string GetDataFromRequest(string requestUri, string postData)
@@ -51,8 +40,7 @@ namespace SpotifyAPI.Web
             return GetDataFromRequest(requestUri, null, null, null);
         }
 
-
-        private async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader? headerType, string headerValue, string postData)
+        internal async Task<string> GetDataFromRequestAsync(string requestUri, HttpRequestHeader? headerType, string headerValue, string postData)
         {
             WebResponse response = await GetResponseAsync(requestUri, headerType, headerValue, postData);
 
@@ -62,7 +50,7 @@ namespace SpotifyAPI.Web
             }
         }
 
-        private string GetDataFromRequest(string requestUri, HttpRequestHeader? headerType, string headerValue, string postData)
+        internal string GetDataFromRequest(string requestUri, HttpRequestHeader? headerType, string headerValue, string postData)
         {
             WebResponse response =  GetResponse(requestUri, headerType, headerValue, postData);
 

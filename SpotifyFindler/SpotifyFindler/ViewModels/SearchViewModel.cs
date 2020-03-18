@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,19 @@ using SpotifyAPI.Models;
 
 namespace SpotifyFindler.ViewModels
 {
-    public class SearchViewModel : INotifyPropertyChanged
+    public class SearchViewModel
     {
-        private Search searchResult = new Search();
+        public ObservableCollection<Item> Albums { get; set; }   
+        public ObservableCollection<Item> Tracks { get; set; }
+        public ObservableCollection<Item> Playlists { get; set; }
+        public ObservableCollection<Item> Artists { get; set; }
 
-        public Search SearchResult
+        public SearchViewModel()
         {
-            get { return searchResult; }
-            set { searchResult = value; OnPropertyChanged(new PropertyChangedEventArgs("SearchResult")); }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            PropertyChanged?.Invoke(this, e);
+            Albums = new ObservableCollection<Item>();
+            Tracks = new ObservableCollection<Item>();
+            Playlists = new ObservableCollection<Item>();
+            Artists = new ObservableCollection<Item>();
         }
     }
 }

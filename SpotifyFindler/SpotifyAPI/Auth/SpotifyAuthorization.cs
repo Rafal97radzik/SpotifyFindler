@@ -24,7 +24,7 @@ namespace SpotifyAPI.Auth
             this.headerValue = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(clientId + ":" + clientSecret));
             this.webClient = new SpotifyWebClient();
             this.token = new Token { ExpiresIn = 0 };
-            this.tokenExpiresIn = DateTime.Now;
+            this.tokenExpiresIn = DateTime.Now.AddDays(-1);
         }
 
         internal Token GetToken()

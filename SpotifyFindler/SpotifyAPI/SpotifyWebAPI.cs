@@ -24,6 +24,7 @@ namespace SpotifyAPI
         {
             spotifyAuthorization = new SpotifyAuthorization(clientId, clientSecret);
             spotifyWebClient = new SpotifyWebClient();
+            spotifyWebBuilder = new SpotifyWebBuilder();
         }
 
         /// <summary>

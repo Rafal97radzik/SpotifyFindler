@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpotifyFindler.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace SpotifyFindler.Pages
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        public MainPage(SearchViewModel viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }

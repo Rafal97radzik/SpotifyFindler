@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpotifyFindler"
         mc:Ignorable="d"
-        Title="SpotifyFindler" Height="650" Width="800" MinWidth="800" MinHeight="600">
+        Title="SpotifyFindler" Height="850" Width="800" MinWidth="800" MinHeight="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Label Content="Szukaj" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" Margin="20,5,10,5"/>
             <TextBox x:Name="searchBox" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" BorderBrush="#FF5078F1" Margin="0,5,20,5" Height="26" Width="600"/>
-            <Button x:Name="searchButton" Content="Szukaj" Width="70" Height="26"/>
+            <Button x:Name="searchButton" Content="Szukaj" Width="70" Height="26" Click="searchButton_Click"/>
         </StackPanel>
 
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
-        <TextBlock Text="The best footer ever" Grid.Row="2" Margin="10,5,0,0"/>
+        <Label Content="The best footer ever" Grid.Row="2" Margin="10,5,10,5" HorizontalAlignment="Right"/>
     </Grid>
 </Window>

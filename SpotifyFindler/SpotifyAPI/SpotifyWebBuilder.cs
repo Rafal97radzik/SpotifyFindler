@@ -33,7 +33,7 @@ namespace SpotifyAPI
         internal string HeaderValue(Token token)
         {
             StringBuilder builder = new StringBuilder(token.TokenType);
-            builder.Append("" + token.AccessToken);
+            builder.Append(" " + token.AccessToken);
 
             return builder.ToString();
         }
