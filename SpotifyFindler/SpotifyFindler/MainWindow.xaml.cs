@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SpotifyAPI.Enums;
+using SpotifyFindler.Controllers;
 
 namespace SpotifyFindler
 {
@@ -24,20 +25,25 @@ namespace SpotifyFindler
     /// </summary>
     public partial class MainWindow : Window
     {
-        private APIClient client;
-        private SearchViewModel viewModel;
+        private SearchPage searchPage;
+        private SearchController controller;
 
         public MainWindow()
         {
             InitializeComponent();
-            viewModel = new SearchViewModel();
-            MainFrame.Navigate(new MainPage(viewModel));
-            client = new APIClient(viewModel);
         }
 
-        private void searchButton_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _=client.SearchAsync(searchBox.Text, 20, 0, SearchType.album, SearchType.track, SearchType.playlist, SearchType.artist);
+            searchPage = new SearchPage();
+            controller = new SearchController(searchPage.DataContext as SearchViewModel);
+            searchButton.Click += SearchButton_Click;
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(searchPage);
+            _ = controller.Search(searchTextBox.Text);
         }
     }
 }

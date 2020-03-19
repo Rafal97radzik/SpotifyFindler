@@ -19,12 +19,11 @@ namespace SpotifyFindler.Pages
     /// <summary>
     /// Logika interakcji dla klasy MainPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class SearchPage : Page
     {
-        public MainPage(SearchViewModel viewModel)
+        public SearchPage()
         {
             InitializeComponent();
-            this.DataContext = viewModel;
         }
     }
 }
