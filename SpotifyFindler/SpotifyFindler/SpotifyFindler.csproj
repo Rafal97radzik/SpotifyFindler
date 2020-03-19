@@ -56,7 +56,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="API\APIClient.cs" />
+    <Compile Include="Controllers\SearchAlbumController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Pages\SearchAlbumPage.xaml.cs">
+      <DependentUpon>SearchAlbumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SearchAlbumViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,6 +75,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\SearchAlbumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

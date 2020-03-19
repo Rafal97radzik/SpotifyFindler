@@ -39,7 +39,7 @@ namespace SpotifyFindler.Pages
 
         private void albumsLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            MainWindow.MainWindowFrame.Navigate(new SearchAlbumPage(queryKeywords));
         }
 
         private void tracksLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

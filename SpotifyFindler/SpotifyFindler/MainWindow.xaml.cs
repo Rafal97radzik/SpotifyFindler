@@ -27,6 +27,8 @@ namespace SpotifyFindler
     {
         private SearchPage searchPage;
 
+        public static Frame MainWindowFrame { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,12 +36,13 @@ namespace SpotifyFindler
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            MainWindowFrame = MainFrame;
             searchPage = new SearchPage();
         }
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(searchPage);
+            MainWindowFrame.Navigate(searchPage);
             searchPage.Search(searchTextBox.Text);
         }
     }
