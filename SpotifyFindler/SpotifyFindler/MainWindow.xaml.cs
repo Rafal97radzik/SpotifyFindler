@@ -26,7 +26,6 @@ namespace SpotifyFindler
     public partial class MainWindow : Window
     {
         private SearchPage searchPage;
-        private SearchController controller;
 
         public MainWindow()
         {
@@ -36,14 +35,12 @@ namespace SpotifyFindler
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             searchPage = new SearchPage();
-            controller = new SearchController(searchPage.DataContext as SearchViewModel);
-            searchButton.Click += SearchButton_Click;
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(searchPage);
-            _ = controller.Search(searchTextBox.Text);
+            searchPage.Search(searchTextBox.Text);
         }
     }
 }

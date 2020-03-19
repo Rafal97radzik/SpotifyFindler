@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpotifyFindler"
         mc:Ignorable="d"
+        x:Name="window"
         Title="SpotifyFindler" Height="850" Width="800" MinWidth="800" MinHeight="600" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,11 +14,11 @@
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Label Content="Szukaj" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" Margin="20,5,10,5"/>
-            <TextBox x:Name="searchTextBox" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" BorderBrush="#FF5078F1" Margin="0,5,20,5" Height="26" Width="600"/>
-            <Button x:Name="searchButton" Content="Szukaj" Width="70" Height="26"/>
-        </StackPanel>
+        <DockPanel Grid.Row="0">
+            <Label Content="Szukaj" DockPanel.Dock="Left" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" Margin="20,5,10,5"/>
+            <Button x:Name="searchButton" Content="Szukaj" DockPanel.Dock="Right" Width="70" Height="26" Click="searchButton_Click" HorizontalContentAlignment="Center" Margin="0,0,30,0"/>
+            <TextBox x:Name="searchTextBox" FontWeight="Bold" FontSize="16" FontFamily="Segoe UI Light" BorderBrush="#FF5078F1" Margin="0,5,20,5" Height="26"/>
+        </DockPanel>
 
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 

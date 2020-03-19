@@ -1,4 +1,5 @@
-﻿using SpotifyFindler.ViewModels;
+﻿using SpotifyFindler.Controllers;
+using SpotifyFindler.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,44 @@ namespace SpotifyFindler.Pages
     /// </summary>
     public partial class SearchPage : Page
     {
+        private string queryKeywords;
+        private SearchController controller;
+
         public SearchPage()
         {
             InitializeComponent();
+            controller = new SearchController(DataContext as SearchViewModel);
+        }
+
+        public void Search(string queryKeywords)
+        {
+            this.queryKeywords = queryKeywords;
+            controller.Search(queryKeywords);
+        }
+
+        private void albumsLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void tracksLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void artistsLabel_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void artistsLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void playlistsLabel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

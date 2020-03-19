@@ -24,10 +24,20 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Albumy" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Label Grid.Row="0" Grid.Column="1" Content="Utwory" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Label Grid.Row="0" Grid.Column="2" Content="Wykonawcy" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Label Grid.Row="0" Grid.Column="3" Content="Playlisty" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Label}">
+                <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="albumsLabel" Content="Albumy" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,5" FontSize="14" MouseLeftButtonUp="albumsLabel_MouseLeftButtonUp" />
+        <Label Grid.Row="0" Grid.Column="1" x:Name="tracksLabel" Content="Utwory" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,5" FontSize="14" MouseLeftButtonUp="tracksLabel_MouseLeftButtonUp" />
+        <Label Grid.Row="0" Grid.Column="2" x:Name="artistsLabel" Content="Wykonawcy" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,5" FontSize="14" MouseLeftButtonUp="artistsLabel_MouseLeftButtonUp" />
+        <Label Grid.Row="0" Grid.Column="3" x:Name="playlistsLabel" Content="Playlisty" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,5" FontSize="14" MouseLeftButtonUp="playlistsLabel_MouseLeftButtonUp" />
 
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Auto">
             <Grid>
