@@ -12,7 +12,7 @@ namespace SpotifyAPI
     {
         private const string APIBase = "https://api.spotify.com/v1";
 
-        internal string Search(string queryKeywords, int limit = 20, int offset = 0, params SearchType[] type)
+        internal string Search(string queryKeywords, int limit, int offset, params SearchType[] type)
         {
             limit = Math.Min(50, limit);
             StringBuilder builder = new StringBuilder(APIBase + "/search");
@@ -26,6 +26,25 @@ namespace SpotifyAPI
 
             builder.Append("&limit=" + limit);
             builder.Append("&offset=" + offset);
+
+            return builder.ToString();
+        }
+
+        internal string AlbumTracks(string albumId, int limit, int offset)
+        {
+            limit = Math.Min(50, limit);
+            StringBuilder builder = new StringBuilder(APIBase + "/albums/");
+            builder.Append(albumId+"/tracks");
+            builder.Append("?limit=" + limit);
+            builder.Append("&offset=" + offset);
+
+            return builder.ToString();
+        }
+
+        internal string Album(string albumId)
+        {
+            StringBuilder builder = new StringBuilder(APIBase + "/albums/");
+            builder.Append(albumId);
 
             return builder.ToString();
         }
