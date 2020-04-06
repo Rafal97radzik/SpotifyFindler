@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,14 +58,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="API\APIClient.cs" />
+    <Compile Include="Depency.cs" />
+    <Compile Include="Web\Auth\ISpotifyAuth.cs" />
+    <Compile Include="Web\Auth\SpotifyAuthorization.cs" />
     <Compile Include="Controllers\SearchAlbumController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Web\Enums\Method.cs" />
+    <Compile Include="Web\Enums\SearchType.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Albums.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Artists.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Playlists.cs" />
+    <Compile Include="Models\Search.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\Tracks.cs" />
     <Compile Include="Pages\SearchAlbumPage.xaml.cs">
       <DependentUpon>SearchAlbumPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\SearchAlbumViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
+    <Compile Include="Web\IWebClient.cs" />
+    <Compile Include="Web\RequestHeader.cs" />
+    <Compile Include="Web\Spotify\SpotifyWebAPI.cs" />
+    <Compile Include="Web\Spotify\SpotifyWebBuilder.cs" />
+    <Compile Include="Web\WebClient.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,6 +128,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,12 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SpotifyAPI\SpotifyAPI.csproj">
-      <Project>{d83bceee-f2d4-455a-be3d-f17d0b9f3672}</Project>
-      <Name>SpotifyAPI</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

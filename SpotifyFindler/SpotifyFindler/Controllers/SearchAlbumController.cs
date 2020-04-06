@@ -1,6 +1,4 @@
-﻿using SpotifyAPI.Enums;
-using SpotifyFindler.API;
-using SpotifyFindler.ViewModels;
+﻿using SpotifyFindler.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

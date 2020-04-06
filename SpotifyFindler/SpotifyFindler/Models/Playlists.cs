@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace SpotifyAPI.Models
+namespace SpotifyFindler.Models
 {
-    public class Albums
+    public class Playlists
     {
         [JsonProperty("href")]
         public string Href { get; set; }

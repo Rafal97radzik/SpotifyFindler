@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SpotifyAPI.Models
+namespace SpotifyFindler.Models
 {
     public class Image
     {

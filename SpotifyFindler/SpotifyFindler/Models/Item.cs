@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace SpotifyAPI.Models
+namespace SpotifyFindler.Models
 {
     public class Item
     {
