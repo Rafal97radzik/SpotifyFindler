@@ -1,12 +1,12 @@
 ﻿using SpotifyFindler.Models;
-using SpotifyFindler.Web.Enums;
+using SpotifyFindler.Web.Spotify.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyFindler.Web
+namespace SpotifyFindler.Web.Spotify
 {
     internal class SpotifyWebBuilder
     {

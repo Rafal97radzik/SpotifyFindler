@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyFindler.Web.Enums
+namespace SpotifyFindler.Web.Spotify.Enums
 {
     [Flags]
     public enum SearchType

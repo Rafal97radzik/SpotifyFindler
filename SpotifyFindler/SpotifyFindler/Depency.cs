@@ -16,7 +16,8 @@ namespace SpotifyFindler
         {
             typesDepency = new Dictionary<Type, Type>();
 
-            typesDepency.Add(typeof(IWebClient), typeof(SpotifyAuthorization));
+            typesDepency.Add(typeof(IWebClient), typeof(WebClient));
+            typesDepency.Add(typeof(ISpotifyAuth), typeof(SpotifyAuthorization));
         }
 
         public static T GetInstance<T>() where T: class

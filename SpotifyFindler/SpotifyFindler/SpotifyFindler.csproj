@@ -64,7 +64,7 @@
     <Compile Include="Controllers\SearchAlbumController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Web\Enums\Method.cs" />
-    <Compile Include="Web\Enums\SearchType.cs" />
+    <Compile Include="Web\Spotify\Enums\SearchType.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Albums.cs" />
     <Compile Include="Models\Artist.cs" />

@@ -2,7 +2,7 @@
 using SpotifyFindler.Models;
 using SpotifyFindler.Web;
 using SpotifyFindler.Web.Auth;
-using SpotifyFindler.Web.Enums;
+using SpotifyFindler.Web.Spotify.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyFindler
+namespace SpotifyFindler.Web.Spotify
 {
     public class SpotifyWebAPI
     {
@@ -27,7 +27,7 @@ namespace SpotifyFindler
             spotifyWebBuilder = new SpotifyWebBuilder();
         }
 
-        public async Task<Search> SearchAsync(string queryKeywords, int limit = 20, int offset = 0, SearchType type)
+        public async Task<Search> SearchAsync(string queryKeywords, SearchType type, int limit = 20, int offset = 0)
         {
             string uri = spotifyWebBuilder.Search(queryKeywords, limit, offset, type);
 
