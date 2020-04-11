@@ -1,5 +1,4 @@
-﻿using SpotifyFindler.Controllers;
-using SpotifyFindler.ViewModels;
+﻿using SpotifyFindler.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,28 +21,29 @@ namespace SpotifyFindler.Pages
     /// </summary>
     public partial class SearchAlbumPage : Page
     {
-        private SearchAlbumController controller;
+        private SearchAlbumViewModel viewModel;
         private DateTime lastUpdateTime;
+        private string queryKeywords;
 
         public SearchAlbumPage(string queryKeywords)
         {
             InitializeComponent();
-            var viewModel = DataContext as SearchAlbumViewModel;
-            controller = new SearchAlbumController(viewModel, queryKeywords);
+            viewModel = DataContext as SearchAlbumViewModel;
+
+            this.queryKeywords = queryKeywords;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            controller.GetNextAlbums();
+            lastUpdateTime = DateTime.Now.AddMilliseconds(500);
+            viewModel.Search(queryKeywords);
         }
 
         private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            var x = e.ExtentHeight - e.VerticalOffset;
-
-            if (x < ActualHeight + 100 && lastUpdateTime.AddMilliseconds(100) < DateTime.Now)
+            if ((e.ExtentHeight-20)<=(e.VerticalOffset+e.ViewportHeight) && lastUpdateTime.AddMilliseconds(500) < DateTime.Now)
             {
-                controller.GetNextAlbums();
+                viewModel.GetNextAlbums();
                 lastUpdateTime = DateTime.Now;
             } 
         }

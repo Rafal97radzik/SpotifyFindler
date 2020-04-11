@@ -1,29 +1,24 @@
 ﻿using Newtonsoft.Json;
 using SpotifyFindler.Models;
-using SpotifyFindler.Web;
-using SpotifyFindler.Web.Auth;
+using SpotifyFindler.Web.Spotify.Auth;
 using SpotifyFindler.Web.Spotify.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SpotifyFindler.Web.Spotify
 {
-    public class SpotifyWebAPI
+    public class SpotifyWebAPI : ISpotifyAPI
     {
-        private Web.WebClient webClient;
+        private IWebClient webClient;
         private ISpotifyAuth spotifyAuthorization;
         private SpotifyWebBuilder spotifyWebBuilder;
 
         private Token Token { get => spotifyAuthorization.GetToken(); }
 
-        public SpotifyWebAPI(string clientId, string clientSecret)
+        public SpotifyWebAPI()
         {
-            spotifyAuthorization = new SpotifyAuthorization(clientId, clientSecret);
-            webClient = new Web.WebClient();
+            spotifyAuthorization = Depency.GetInstance<ISpotifyAuth>();
+            webClient = Depency.GetInstance<IWebClient>();
             spotifyWebBuilder = new SpotifyWebBuilder();
         }
 
@@ -50,8 +45,7 @@ namespace SpotifyFindler.Web.Spotify
 
         private async Task<T> GetData<T>(string uri)
         {
-            Token token = spotifyAuthorization.GetToken();
-            string headerValue = spotifyWebBuilder.HeaderValue(token);
+            string headerValue = spotifyWebBuilder.HeaderValue(Token);
 
             webClient.RequestUri = uri;
             webClient.Header = new RequestHeader { Header = HttpRequestHeader.Authorization, Value = headerValue };

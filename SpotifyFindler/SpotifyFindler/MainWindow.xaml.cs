@@ -1,5 +1,4 @@
-﻿using SpotifyFindler.API;
-using SpotifyFindler.Pages;
+﻿using SpotifyFindler.Pages;
 using SpotifyFindler.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,8 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SpotifyAPI.Enums;
-using SpotifyFindler.Controllers;
 
 namespace SpotifyFindler
 {

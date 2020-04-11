@@ -13,10 +13,12 @@ namespace SpotifyFindler.Web
         public string PostData { get; set; }
         public Method Method { get; set; }
 
+
         public WebClient()
         {
             Method = Method.GET;
         }
+
 
         public async Task<string> GetDataAsync()
         {

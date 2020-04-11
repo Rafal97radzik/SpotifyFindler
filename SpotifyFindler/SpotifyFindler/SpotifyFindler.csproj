@@ -59,10 +59,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Depency.cs" />
-    <Compile Include="Web\Auth\ISpotifyAuth.cs" />
-    <Compile Include="Web\Auth\SpotifyAuthorization.cs" />
-    <Compile Include="Controllers\SearchAlbumController.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Web\Spotify\Auth\ISpotifyAuth.cs" />
+    <Compile Include="Web\Spotify\Auth\SpotifyAuthorization.cs" />
     <Compile Include="Web\Enums\Method.cs" />
     <Compile Include="Web\Spotify\Enums\SearchType.cs" />
     <Compile Include="Models\Album.cs" />
@@ -83,6 +81,7 @@
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Web\RequestHeader.cs" />
+    <Compile Include="Web\Spotify\ISpotifyAPI.cs" />
     <Compile Include="Web\Spotify\SpotifyWebAPI.cs" />
     <Compile Include="Web\Spotify\SpotifyWebBuilder.cs" />
     <Compile Include="Web\WebClient.cs" />

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace SpotifyFindler.Models
 {
@@ -12,5 +13,9 @@ namespace SpotifyFindler.Models
 
         [JsonProperty("expires_in")]
         public int ExpiresIn { get; set; }
+
+        public DateTime Created { get; } = DateTime.Now;
+
+        public DateTime Expires { get => Created.AddSeconds(ExpiresIn - 30); }
     }
 }
