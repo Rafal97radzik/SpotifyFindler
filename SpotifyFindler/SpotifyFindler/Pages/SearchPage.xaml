@@ -43,53 +43,55 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
 
-                <ListView Grid.Column="0" ItemsSource="{Binding Path=Albums}" BorderThickness="0" HorizontalContentAlignment="Center">
+                <ListView Grid.Column="1" ItemsSource="{Binding Path=Albums}" BorderThickness="0" HorizontalContentAlignment="Center">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" MaxWidth="150" Height="200">
+                            <StackPanel Orientation="Vertical" Height="200">
                                 <Image Source="{Binding Path=Images[0].Url}" Width="150" Height="150" Margin="0,10,0,0"/>
-                                <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding Path=Artists[0].Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Artists[0].Name}" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <ListView  Grid.Column="1" ItemsSource="{Binding Path=Tracks}" BorderThickness="0" HorizontalContentAlignment="Center">
+                <ListView  Grid.Column="2" ItemsSource="{Binding Path=Tracks}" BorderThickness="0" HorizontalContentAlignment="Center">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" MaxWidth="150"  Height="200">
+                            <StackPanel Orientation="Vertical" Height="200">
                                 <Image Source="{Binding Path=Album.Images[0].Url}" Width="150" Height="150" Margin="0,10,0,0"/>
-                                <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding Path=Artists[0].Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Artists[0].Name}" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <ListView  Grid.Column="2" ItemsSource="{Binding Path=Artists}" BorderThickness="0" HorizontalContentAlignment="Center">
+                <ListView  Grid.Column="3" ItemsSource="{Binding Path=Artists}" BorderThickness="0" HorizontalContentAlignment="Center">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" MaxWidth="150"  Height="200">
+                            <StackPanel Orientation="Vertical" Height="200">
                                 <Image Source="{Binding Path=Images[0].Url}" Width="150" Height="150" Margin="0,10,0,0"/>
-                                <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <ListView  Grid.Column="3" ItemsSource="{Binding Path=Playlists}" BorderThickness="0" HorizontalContentAlignment="Center">
+                <ListView  Grid.Column="4" ItemsSource="{Binding Path=Playlists}" BorderThickness="0" HorizontalContentAlignment="Center">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" MaxWidth="150"  Height="200">
+                            <StackPanel Orientation="Vertical"  Height="200">
                                 <Image Source="{Binding Path=Images[0].Url}" Width="150" Height="150" Margin="0,10,0,0"/>
-                                <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                                <TextBlock MaxWidth="160" Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
